@@ -49,9 +49,40 @@ public class Main {
         if(topScore == 100){
             System.out.println("You got the high score!");
         }
-        int secondTopScore = 60;
-        if(topScore>secondTopScore && topScore<100){
+        int secondTopScore = 81;
+        if((topScore>secondTopScore) && (topScore<100)){
             System.out.println("Greater than second topScore and less than 100");
+        }
+
+        if((topScore>90) || (secondTopScore <=90)){
+            System.out.println("one of these tests is true");
+        }
+
+        int newValue = 50;
+        if(newValue == 50){
+            System.out.println("This is true");
+        }
+
+        boolean isCar = false;
+        if(isCar){
+            System.out.println("this is not supposed to happen");
+        }
+
+        isCar = true;
+        boolean wasCar = isCar ? true : false;
+        if(wasCar){
+            System.out.println("wasCar is true");
+        }
+
+        double firstValue = 20d;
+        double secondValue = 80d;
+        double bothNumbers = (firstValue + secondValue) * 25;
+        System.out.println("bothNumbers = " + bothNumbers);
+        double remainder = (bothNumbers%40);
+        System.out.println("remained is "+ remainder);
+
+        if(remainder<=20){
+            System.out.println("Total was over the limit");
         }
     }
 }
