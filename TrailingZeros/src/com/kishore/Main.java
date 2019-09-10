@@ -8,27 +8,25 @@ public class Main {
 
         Scanner scn = new Scanner(System.in);
         System.out.println("Enter the number to check if its trailing zeros in its factorial");
-        int factorial = scn.nextInt();
-        int counter = 0;
-        int counter2=0;
-        boolean quit = false;
+        double factorial = scn.nextInt();
+        double counter = 0;
+        double counter2=0;
 
+        double factorialValue = factorialFunction(factorial);
+        double temp=factorialValue;
 
-        int factorialValue = factorialFunction(factorial);
-        int temp=factorialValue;
-
-        for(int i = 0; factorialValue>0;i++){
+        for(double i = 0; factorialValue>0;i++){
             factorialValue/=10;
             counter++;
         }
 
-        System.out.println(counter);
-
-        for(int j = 0; j<=counter; j++){
-            if(temp/10==0){
+        for(double j = 1; j<=counter; j++){
+            if(temp%10==0){
+                temp=temp/10;
                 counter2++;
             }
         }
+
         System.out.println("The trailing zeros in " + factorial + " is " + counter2);
 
 
@@ -52,8 +50,8 @@ public class Main {
 
 
 
-    public static int factorialFunction(int factorial){
-        int sum = 1;
+    public static double factorialFunction(double factorial){
+        double sum = 1;
         while(factorial>=1){
             return factorial*factorialFunction(factorial-1);
         }
