@@ -23,7 +23,7 @@ public class Main {
             }
 
         }
-        System.out.println(stringVar);
+//        System.out.println(stringVar);
         System.out.println(reverseString(stringVar));
     }
 
@@ -32,11 +32,25 @@ public class Main {
 //        for(char x : charArray){
 //            System.out.println(x);
 //        }
+
+//        char temp;
+//        for(int i=0; i<=stringVar.length()-1; i++){
+//            temp = charArray[i];
+//            charArray[i] = charArray[stringVar.length()-1];
+//            charArray[stringVar.length()-1] = temp;
+//            stringVar.length();
+//        }
+
+        int begin = 0;
+        int end = charArray.length-1;
         char temp;
-        for(int i=0; i<=stringVar.length()-1; i++){
-            temp = charArray[i];
-            charArray[i] = charArray[stringVar.length()-1];
-            charArray[stringVar.length()-1] = temp;
+
+        while(end>begin){
+            temp=charArray[begin];
+            charArray[begin] = charArray[end];
+            charArray[end] = temp;
+            end--;
+            begin++;
         }
         return new String(charArray);
     }
